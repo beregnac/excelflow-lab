@@ -5,22 +5,20 @@
 ## Задание 1: Публикация сайта и интеграция рекламного блока
 
 ### 1.1. Выбранная платформа и обоснование
-Для развёртывания статического SPA-приложения **ExcelFlow** (Vue 3 + Vite + Tailwind CSS v3.4+) выбрана платформа **Cloudflare Pages** (альтернативный вариант — **GitHub Pages** при сохранении формата некоммерческого учебного или пет-проекта). На бесплатном тарифе Cloudflare Pages отсутствуют ограничения по пропускной способности (неограниченный трафик и запросы к статическим ресурсам), а условия обслуживания (*Cloudflare Self-Serve Subscription Agreement*) не содержат запрета на коммерческое использование и размещение сторонней рекламы (например, партнёрских баннеров или рекламных сетей) при условии соблюдения общих правил безопасности. В отличие от Vercel Hobby, это исключает риск блокировки аккаунта после добавления компонента `AdSlot.vue`.
+Для публичного доступа к приложению **ExcelFlow** (Vue 3 + Vite + Tailwind CSS v3.4+) использован **GitHub Pages** (`https://beregnac.github.io/excelflow-lab/`), а в качестве основной рекомендованной платформы для коммерческого сценария проект также подготовлен и развёрнут на **Cloudflare Pages** (`https://excelflow-lab.pages.dev`). GitHub Pages допускает умеренное размещение баннеров и спонсорских блоков на личных и проектных сайтах (при условии, что сайт не ориентирован преимущественно на коммерцию или рекламу) и стабильно открывается во всех сетях, включая сети провайдеров, ограничивающих `*.pages.dev`. При масштабировании монетизации проект без изменения кода переносится на Cloudflare Pages, где условия обслуживания (*Self-Serve Subscription Agreement*) вообще не содержат запретов на рекламу и не ограничивают трафик.
 
 ### 1.2. Конфигурация проекта и пошаговое развёртывание
-1. В файле `vite.config.js` явно задан базовый путь `base: '/'`, оптимальный для корневого домена и поддомена Cloudflare Pages (`*.pages.dev`).
-2. Интегрирован компонент `src/components/AdSlot.vue` с поддержкой пресетов размеров (`banner`, `leaderboard`, `sidebar`, `square`, `fluid`) и пользовательских пропсов `width`/`height`. Блок размещён на главной странице (`HomeView.vue`), в каталоге (`CatalogView.vue`) и в документации дизайн-системы (`DesignSystemView.vue`).
-3. Сборка проверена локально командой `npm run build` (выходная директория — `dist/`).
-4. Инструкция публикации в Cloudflare Pages:
-   - Загрузить проект в репозиторий GitHub (`git init && git add . && git commit -m "feat: tailwind + AdSlot" && git push`).
-   - В панели **Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git** выбрать репозиторий.
-   - Указать параметры сборки: **Framework preset:** `Vite` (или `None`), **Build command:** `npm run build`, **Build output directory:** `dist`.
-   - Запустить деплой и сохранить выданный адрес вида `https://<project-name>.pages.dev`.
+1. В файле `vite.config.js` настроена переменная `base: process.env.VITE_BASE_PATH || '/'`: на корневых доменах (`localhost`, `*.pages.dev`) используется `'/'`, а при сборке в GitHub Actions для репозитория `excelflow-lab` автоматически подставляется `'/excelflow-lab/'`.
+2. В `src/router/index.js` передан `createWebHistory(import.meta.env.BASE_URL)` и добавлено копирование `dist/index.html` в `dist/404.html` в `.github/workflows/deploy.yml`, чтобы все маршруты SPA работали корректно при обновлении страницы.
+3. Интегрирован компонент `src/components/AdSlot.vue` с поддержкой пресетов размеров (`banner`, `leaderboard`, `sidebar`, `square`, `fluid`) и пользовательских пропсов `width`/`height`. Блок размещён на главной странице (`HomeView.vue`), в каталоге (`CatalogView.vue`) и в документации дизайн-системы (`DesignSystemView.vue`).
+4. Автоматическое развёртывание настроено через GitHub Actions (`.github/workflows/deploy.yml`: `npm ci` → `npm run build` → `actions/deploy-pages@v4`).
 
 ### 1.3. Ссылка и материалы сдачи
-- **URL опубликованного сайта:** `https://<project-name>.pages.dev` *(заполняется после подключения вашего GitHub-репозитория в Cloudflare Pages)*
+- **URL опубликованного сайта (GitHub Pages):** https://beregnac.github.io/excelflow-lab/
+- **Репозиторий проекта:** https://github.com/beregnac/excelflow-lab
+- **Дополнительно (Cloudflare Pages):** https://excelflow-lab.pages.dev
 - **Код компонента:** `src/components/AdSlot.vue`
-- **Скриншот расположения блока:** рекламный блок отображается на главной странице (`/`) между сеткой товаров и отзывами, а также в каталоге (`/catalog`) в левой панели фильтров и перед пагинацией.
+- **Скриншот расположения блока:** рекламный блок отображается на главной странице (под сеткой модулей «Популярные модули и шаблоны»), а также в каталоге (`/catalog`) в левой панели фильтров и перед пагинацией.
 
 ```vue
 <template>

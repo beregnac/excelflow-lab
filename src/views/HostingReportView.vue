@@ -7,10 +7,17 @@
           <span class="ds-badge ds-badge-brand mb-2">Задания 1 &amp; 2 · Публикация и Хостинг</span>
           <h1 class="ds-h2">Интеграция AdSlot и сравнение бесплатных хостингов (2026)</h1>
           <p class="ds-body mt-1">
-            Подготовка проекта к публикации на Cloudflare Pages, интерактивный рекламный плейсхолдер и анализ 5 хостинг-платформ.
+            Публикация проекта на GitHub Pages / Cloudflare Pages, интерактивный рекламный плейсхолдер и анализ 5 хостинг-платформ.
           </p>
         </div>
-        <span class="ds-badge ds-badge-success shrink-0">Выбор: Cloudflare Pages</span>
+        <a
+          href="https://beregnac.github.io/excelflow-lab/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ds-badge ds-badge-success shrink-0 hover:underline"
+        >
+          Live: beregnac.github.io/excelflow-lab ↗
+        </a>
       </div>
 
       <!-- Task 1 Summary + Live AdSlot Demo -->
@@ -19,7 +26,7 @@
           <h2 id="task1-heading" class="ds-h3">Задание 1: Чеклист публикации и AdSlot.vue</h2>
           <ol class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 list-decimal pl-5">
             <li>
-              <strong>Конфигурация Vite:</strong> в <code class="text-xs">vite.config.js</code> установлено <code class="text-xs">base: '/'</code> для корневого домена <code class="text-xs">*.pages.dev</code>.
+              <strong>Конфигурация Vite и Router:</strong> в <code class="text-xs">vite.config.js</code> задано <code class="text-xs">base: process.env.VITE_BASE_PATH || '/'</code>, а в <code class="text-xs">router/index.js</code> подключён <code class="text-xs">import.meta.env.BASE_URL</code>.
             </li>
             <li>
               <strong>Компонент <code class="text-xs">AdSlot.vue</code>:</strong> реализован на Tailwind CSS с пунктирной рамкой, светлым/тёмным фоном, идентификатором текста и пресетами (<code class="text-xs">banner</code>, <code class="text-xs">sidebar</code>, <code class="text-xs">square</code>) + кастомными <code class="text-xs">width</code> / <code class="text-xs">height</code>.
@@ -28,7 +35,7 @@
               <strong>Размещение в интерфейсе:</strong> блок встроен на <router-link to="/" class="text-brand-600 underline dark:text-brand-400">главную страницу</router-link>, в <router-link to="/catalog" class="text-brand-600 underline dark:text-brand-400">каталог</router-link> и в <router-link to="/design-system" class="text-brand-600 underline dark:text-brand-400">дизайн-систему</router-link>.
             </li>
             <li>
-              <strong>Сборка для Cloudflare Pages:</strong> Build command <code class="text-xs">npm run build</code>, Output directory <code class="text-xs">dist</code>.
+              <strong>CI/CD публикация:</strong> GitHub Actions (<code class="text-xs">.github/workflows/deploy.yml</code>) автоматически собирает <code class="text-xs">dist/</code> на <a href="https://beregnac.github.io/excelflow-lab/" target="_blank" rel="noopener noreferrer" class="text-brand-600 underline dark:text-brand-400">GitHub Pages</a>.
             </li>
           </ol>
 
