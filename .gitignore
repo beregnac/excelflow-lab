@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.idea/
+.gigacode/
+.gigaide/
+*.local
+.DS_Store

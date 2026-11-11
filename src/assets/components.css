@@ -1,0 +1,134 @@
+@layer components {
+  /* Layout & Sections (Task 3.3, 4.4) */
+  .ds-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .ds-section {
+    @apply py-14 sm:py-20 transition-colors duration-300;
+  }
+
+  /* Typography (Task 4.4) */
+  .ds-h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100;
+  }
+
+  .ds-h2 {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100;
+  }
+
+  .ds-h3 {
+    @apply text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-100;
+  }
+
+  .ds-body {
+    @apply text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300;
+  }
+
+  .ds-muted {
+    @apply text-xs sm:text-sm text-slate-500 dark:text-slate-400;
+  }
+
+  /* Buttons: primary / secondary / ghost / danger × sm / md / lg (Task 4.4) */
+  .ds-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 ease-out
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+           dark:focus-visible:ring-offset-slate-900 active:scale-[0.98]
+           disabled:opacity-50 disabled:pointer-events-none select-none cursor-pointer;
+  }
+
+  .ds-btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .ds-btn-md {
+    @apply px-4 py-2.5 text-sm;
+  }
+
+  .ds-btn-lg {
+    @apply px-6 py-3.5 text-base;
+  }
+
+  .ds-btn-primary {
+    @apply bg-brand-600 text-white shadow-sm hover:bg-brand-700 hover:shadow-md;
+  }
+
+  .ds-btn-secondary {
+    @apply bg-slate-100 text-slate-800 hover:bg-slate-200
+           dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700;
+  }
+
+  .ds-btn-ghost {
+    @apply bg-transparent text-slate-700 hover:bg-slate-100
+           dark:text-slate-200 dark:hover:bg-slate-800;
+  }
+
+  .ds-btn-danger {
+    @apply bg-semantic-danger-600 text-white shadow-sm hover:bg-semantic-danger-700;
+  }
+
+  .ds-btn-outline {
+    @apply border border-slate-300 bg-white/80 text-slate-800 hover:bg-slate-50 hover:border-slate-400
+           dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800;
+  }
+
+  /* Form Controls (Task 2.4, 4.4) */
+  .ds-label {
+    @apply block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1.5;
+  }
+
+  .ds-input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900
+           placeholder:text-slate-400 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500
+           disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed
+           dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500
+           dark:disabled:bg-slate-800/60;
+  }
+
+  .ds-checkbox {
+    @apply h-4 w-4 rounded border-slate-300 text-brand-600 transition
+           focus:ring-2 focus:ring-brand-500 focus:ring-offset-1
+           dark:border-slate-600 dark:bg-slate-800 dark:focus:ring-offset-slate-900;
+  }
+
+  /* Cards, Badges & Alerts (Task 3.3, 4.4) */
+  .ds-card {
+    @apply rounded-2xl border border-slate-200/80 bg-white p-6 shadow-soft transition-all duration-200
+           dark:border-slate-800 dark:bg-slate-900/90;
+  }
+
+  .ds-badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors;
+  }
+
+  .ds-badge-brand {
+    @apply bg-brand-50 text-brand-700 border border-brand-200/70
+           dark:bg-brand-950/60 dark:text-brand-300 dark:border-brand-800/70;
+  }
+
+  .ds-badge-success {
+    @apply bg-semantic-success-50 text-semantic-success-700 border border-semantic-success-100
+           dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800/60;
+  }
+
+  .ds-badge-warning {
+    @apply bg-semantic-warning-50 text-semantic-warning-700 border border-semantic-warning-100
+           dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/60;
+  }
+
+  .ds-badge-danger {
+    @apply bg-semantic-danger-50 text-semantic-danger-700 border border-semantic-danger-100
+           dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800/60;
+  }
+
+  .ds-alert {
+    @apply flex items-start gap-3 rounded-xl border p-4 text-sm transition-colors;
+  }
+
+  .ds-nav-link {
+    @apply rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors duration-200
+           hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500
+           dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white;
+  }
+}
