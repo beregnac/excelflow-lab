@@ -117,7 +117,7 @@
 
           <!-- AdSlot Banner Integration -->
           <div class="mt-10">
-            <AdSlot size="banner" label="Рекламное место · Партнёрский блок" />
+            <AdSlot size="banner" variant="belbet" label="Реклама" />
           </div>
         </div>
       </section>

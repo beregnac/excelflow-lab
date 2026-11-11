@@ -192,10 +192,11 @@
           <p class="ds-muted mt-1">Настраивается через <code class="text-xs">size</code> (<code class="text-xs">banner</code>, <code class="text-xs">sidebar</code>, <code class="text-xs">square</code>) или произвольные <code class="text-xs">width</code> / <code class="text-xs">height</code>.</p>
         </div>
         <div class="space-y-6">
-          <AdSlot size="banner" label="Рекламное место · Banner" />
+          <AdSlot size="banner" variant="placeholder" label="Рекламное место · Placeholder" />
+          <AdSlot size="banner" variant="belbet" label="Реклама · Belbet Banner" />
           <div class="flex flex-wrap items-start justify-center gap-6">
-            <AdSlot size="sidebar" label="Advertisement · Sidebar" />
-            <AdSlot size="square" label="Рекламное место · Square" />
+            <AdSlot size="sidebar" variant="belbet" label="Реклама · Sidebar" />
+            <AdSlot size="square" variant="placeholder" label="Рекламное место · Square" />
           </div>
         </div>
       </section>

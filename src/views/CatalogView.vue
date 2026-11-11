@@ -107,7 +107,7 @@
           </div>
 
           <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
-            <AdSlot size="sidebar" width="100%" height="220px" label="Advertisement" />
+            <AdSlot size="sidebar" variant="belbet" width="100%" height="220px" label="Реклама" />
           </div>
         </aside>
 
@@ -173,7 +173,7 @@
           </div>
 
           <!-- AdSlot between catalog grid and pagination -->
-          <AdSlot size="banner" label="Рекламное место · Спонсор каталога" />
+          <AdSlot size="banner" variant="belbet" label="Рекламное место" />
 
           <!-- Pagination -->
           <nav
