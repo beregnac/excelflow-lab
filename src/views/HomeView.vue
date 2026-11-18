@@ -12,7 +12,6 @@
       <section id="about" class="ds-section bg-white dark:bg-slate-900" aria-labelledby="upload-heading">
         <div class="ds-container">
           <div id="excel-upload" class="mx-auto max-w-3xl text-center space-y-3 mb-10">
-            <span class="ds-badge ds-badge-success">Интеграция с исходной лабой</span>
             <h2 id="upload-heading" class="ds-h2">Загрузка и обработка Excel-файлов</h2>
             <p class="ds-body">
               Загрузите реальный файл <code class="rounded bg-slate-100 px-1.5 py-0.5 text-brand-600 dark:bg-slate-800 dark:text-brand-400">.xlsx</code> / <code class="rounded bg-slate-100 px-1.5 py-0.5 text-brand-600 dark:bg-slate-800 dark:text-brand-400">.xls</code> для анализа в таблице и дашборде, либо используйте тестовый набор данных.
