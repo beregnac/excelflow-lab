@@ -79,7 +79,7 @@
           class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-balance"
         >
           Превратите Excel-таблицы в
-          <span class="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <span class="bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
             интерактивную аналитику
           </span>
         </h1>
@@ -92,16 +92,20 @@
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           <a
             href="#excel-upload"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 px-7 py-3.5 text-base font-semibold text-white shadow-glow transition-all duration-300 hover:scale-105 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400"
+            class="group relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 px-7 py-3.5 text-base font-semibold text-white shadow-glow transition-all duration-300 hover:scale-105 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400"
           >
-            Загрузить Excel сейчас
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <span
+              class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/35 to-transparent animate-shine-sweep"
+              aria-hidden="true"
+            ></span>
+            <span class="relative">Загрузить Excel сейчас</span>
+            <svg class="relative h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
           <router-link
             to="/dashboard"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
           >
             Открыть Дашборд 4.1
           </router-link>
@@ -109,19 +113,19 @@
 
         <!-- Backdrop-blur Glass Metrics Strip -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-transform duration-300 hover:-translate-y-1">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-purple-400/50 hover:bg-white/10 animate-fade-in-up" style="animation-delay: 120ms">
             <div class="text-2xl font-extrabold text-white">16</div>
             <div class="text-xs text-slate-400 mt-0.5">Tailwind модулей</div>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-transform duration-300 hover:-translate-y-1">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-purple-400/50 hover:bg-white/10 animate-fade-in-up" style="animation-delay: 220ms">
             <div class="text-2xl font-extrabold text-purple-300">v3.4+</div>
             <div class="text-xs text-slate-400 mt-0.5">@container &amp; has-*</div>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-transform duration-300 hover:-translate-y-1">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-pink-400/50 hover:bg-white/10 animate-fade-in-up" style="animation-delay: 320ms">
             <div class="text-2xl font-extrabold text-pink-300">XLSX</div>
             <div class="text-xs text-slate-400 mt-0.5">Парсинг на клиенте</div>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-transform duration-300 hover:-translate-y-1">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-400/50 hover:bg-white/10 animate-fade-in-up" style="animation-delay: 420ms">
             <div class="text-2xl font-extrabold text-emerald-300">100%</div>
             <div class="text-xs text-slate-400 mt-0.5">Mobile-first (320px+)</div>
           </div>

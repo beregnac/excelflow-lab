@@ -11,17 +11,19 @@
       <!-- #about: Original Excel Uploader Lab Integration -->
       <section id="about" class="ds-section bg-white/70 backdrop-blur-[2px] dark:bg-slate-900/65" aria-labelledby="upload-heading">
         <div class="ds-container">
-          <div id="excel-upload" class="mx-auto max-w-3xl text-center space-y-3 mb-10">
+          <div id="excel-upload" v-reveal class="mx-auto max-w-3xl text-center space-y-3 mb-10">
             <h2 id="upload-heading" class="ds-h2">Загрузка и обработка Excel-файлов</h2>
             <p class="ds-body">
               Загрузите реальный файл <code class="rounded bg-slate-100 px-1.5 py-0.5 text-brand-600 dark:bg-slate-800 dark:text-brand-400">.xlsx</code> / <code class="rounded bg-slate-100 px-1.5 py-0.5 text-brand-600 dark:bg-slate-800 dark:text-brand-400">.xls</code> для анализа в таблице и дашборде, либо используйте тестовый набор данных.
             </p>
           </div>
 
-          <ExcelUploader
-            @parse="handleParsed"
-            @error="showError"
-          />
+          <div v-reveal="{ variant: 'zoom', delay: 100 }">
+            <ExcelUploader
+              @parse="handleParsed"
+              @error="showError"
+            />
+          </div>
 
           <div class="mt-4 text-center">
             <button
@@ -49,15 +51,15 @@
       <!-- #services: Task 3.3 Features (3 Columns with Icons) -->
       <section id="services" class="ds-section bg-slate-50/45 dark:bg-slate-950/50" aria-labelledby="features-heading">
         <div class="ds-container">
-          <div class="mx-auto max-w-2xl text-center space-y-3 mb-12">
+          <div v-reveal class="mx-auto max-w-2xl text-center space-y-3 mb-12">
             <span class="ds-badge ds-badge-brand">Возможности платформы</span>
             <h2 id="features-heading" class="ds-h2">Всё необходимое для работы с данными</h2>
             <p class="ds-body">Единая архитектура на Vue 3, Pinia и Tailwind CSS v3.4+ с полной адаптивностью от 320px до 4K.</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <article class="ds-card group hover:-translate-y-1 hover:border-brand-300 dark:hover:border-brand-700">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-transform duration-300 group-hover:scale-110 dark:bg-brand-950 dark:text-brand-400">
+            <article v-reveal="{ delay: 0 }" class="ds-card relative overflow-hidden group hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-xl dark:hover:border-brand-700">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 dark:bg-brand-950 dark:text-brand-400">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="2" />
                   <path d="M3 9h18M9 21V9" />
@@ -65,20 +67,22 @@
               </div>
               <h3 class="ds-h3 mb-2">Умные Excel-таблицы</h3>
               <p class="ds-body">Фиксированные столбцы индекса и действий, пагинация, добавление и редактирование строк в модальных окнах.</p>
+              <span class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-brand-500 to-purple-500 transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </article>
 
-            <article class="ds-card group hover:-translate-y-1 hover:border-purple-300 dark:hover:border-purple-700">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600 transition-transform duration-300 group-hover:scale-110 dark:bg-purple-950 dark:text-purple-400">
+            <article v-reveal="{ delay: 120 }" class="ds-card relative overflow-hidden group hover:-translate-y-1.5 hover:border-purple-300 hover:shadow-xl dark:hover:border-purple-700">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 dark:bg-purple-950 dark:text-purple-400">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M12 20V10M18 20V4M6 20v-4" />
                 </svg>
               </div>
               <h3 class="ds-h3 mb-2">Аналитика и Kanban</h3>
               <p class="ds-body">Интерактивный дашборд с 12-колоночной сеткой, тепловым графиком, канбан-доской и встроенным чатом команды.</p>
+              <span class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </article>
 
-            <article class="ds-card group hover:-translate-y-1 hover:border-pink-300 dark:hover:border-pink-700">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-pink-50 text-pink-600 transition-transform duration-300 group-hover:scale-110 dark:bg-pink-950 dark:text-pink-400">
+            <article v-reveal="{ delay: 240 }" class="ds-card relative overflow-hidden group hover:-translate-y-1.5 hover:border-pink-300 hover:shadow-xl dark:hover:border-pink-700">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-pink-50 text-pink-600 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-45 dark:bg-pink-950 dark:text-pink-400">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <circle cx="12" cy="12" r="3" />
                   <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
@@ -86,6 +90,7 @@
               </div>
               <h3 class="ds-h3 mb-2">Дизайн-система v3.4+</h3>
               <p class="ds-body">Селекторы <code class="text-xs">has-[:checked]</code>, <code class="text-xs">@container</code>-запросы, кастомные плагины и темная тема без резких скачков.</p>
+              <span class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-pink-500 to-amber-400 transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </article>
           </div>
         </div>
@@ -107,15 +112,16 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <ProductCard
-              v-for="product in featuredProducts"
+              v-for="(product, idx) in featuredProducts"
               :key="product.id"
+              v-reveal="{ delay: (idx % 4) * 90 }"
               :product="product"
               @add-to-cart="cart.addItem($event)"
             />
           </div>
 
           <!-- AdSlot Banner Integration -->
-          <div class="mt-10">
+          <div v-reveal="{ variant: 'zoom', delay: 100 }" class="mt-10">
             <AdSlot size="banner" variant="sirus" label="Реклама" />
           </div>
         </div>
@@ -124,7 +130,7 @@
       <!-- Task 3.3: Testimonials Carousel (Pure CSS scroll-snap without JS) -->
       <section class="ds-section bg-slate-50/45 dark:bg-slate-950/50" aria-labelledby="testimonials-heading">
         <div class="ds-container">
-          <div class="mx-auto max-w-2xl text-center space-y-2 mb-10">
+          <div v-reveal class="mx-auto max-w-2xl text-center space-y-2 mb-10">
             <span class="ds-badge ds-badge-brand">Отзывы · CSS Snap-карусель</span>
             <h2 id="testimonials-heading" class="ds-h2">Команды уже ускорили работу с Excel</h2>
             <p class="ds-muted">Листайте карточки горизонтально — карусель работает без JavaScript через <code class="text-xs">snap-x snap-mandatory</code>.</p>
@@ -132,9 +138,10 @@
 
           <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-thin">
             <article
-              v-for="item in testimonials"
+              v-for="(item, idx) in testimonials"
               :key="item.author"
-              class="snap-center shrink-0 w-[85%] sm:w-[46%] lg:w-[32%] ds-card flex flex-col justify-between gap-4"
+              v-reveal="{ delay: idx * 90 }"
+              class="snap-center shrink-0 w-[85%] sm:w-[46%] lg:w-[32%] ds-card flex flex-col justify-between gap-4 hover:-translate-y-1 hover:shadow-lg"
             >
               <div class="space-y-3">
                 <div class="flex items-center gap-1 text-amber-400 text-sm" aria-label="Оценка 5 из 5">
@@ -169,9 +176,10 @@
 
           <div class="space-y-3">
             <details
-              v-for="faq in faqs"
+              v-for="(faq, idx) in faqs"
               :key="faq.q"
-              class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-colors open:bg-white open:shadow-sm dark:border-slate-800 dark:bg-slate-950/60 dark:open:bg-slate-900"
+              v-reveal="{ delay: idx * 80 }"
+              class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition-all duration-300 hover:border-brand-300 open:bg-white open:shadow-md dark:border-slate-800 dark:bg-slate-950/60 dark:hover:border-brand-700 dark:open:bg-slate-900"
             >
               <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-900 dark:text-white">
                 <span>{{ faq.q }}</span>
@@ -192,8 +200,8 @@
       <!-- #contact: Task 1.1 Profile Card + Quick Contact CTA -->
       <section id="contact" class="ds-section bg-slate-50/45 dark:bg-slate-950/50" aria-labelledby="contact-heading">
         <div class="ds-container">
-          <div class="flex flex-col lg:flex-row items-center justify-between gap-10 rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-soft dark:border-slate-800 dark:bg-slate-900">
-            <div class="max-w-xl space-y-4">
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-10 rounded-3xl border border-slate-200 bg-white/85 backdrop-blur-sm p-6 sm:p-10 shadow-soft dark:border-slate-800 dark:bg-slate-900/85">
+            <div v-reveal="{ variant: 'left' }" class="max-w-xl space-y-4">
               <span class="ds-badge ds-badge-brand">Задание 1.1 · Карточка профиля</span>
               <h2 id="contact-heading" class="ds-h2">Готовы автоматизировать ваши таблицы?</h2>
               <p class="ds-body">
@@ -210,7 +218,9 @@
             </div>
 
             <!-- Task 1.1 ProfileCard -->
-            <ProfileCard @message="$router.push('/messenger')" />
+            <div v-reveal="{ variant: 'right', delay: 120 }" class="w-full md:w-auto">
+              <ProfileCard @message="$router.push('/messenger')" />
+            </div>
           </div>
         </div>
       </section>

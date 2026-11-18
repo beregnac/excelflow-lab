@@ -2,7 +2,7 @@
   <!-- Task 2.2: Pricing Table (Basic / Pro Popular / Enterprise) with ring-2 ring-indigo-500, lg:scale-105, divide-y, space-y-* -->
   <section id="pricing" class="ds-section bg-slate-50/45 dark:bg-slate-950/50" aria-labelledby="pricing-heading">
     <div class="ds-container">
-      <div class="mx-auto max-w-2xl text-center space-y-3 mb-12">
+      <div v-reveal class="mx-auto max-w-2xl text-center space-y-3 mb-12">
         <span class="ds-badge ds-badge-brand">Тарифные планы</span>
         <h2 id="pricing-heading" class="ds-h2">Прозрачные тарифы для команд любого размера</h2>
         <p class="ds-body">Выберите подходящий план для работы с Excel-данными, аналитикой и автоматизацией.</p>
@@ -10,13 +10,14 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
         <article
-          v-for="plan in plans"
+          v-for="(plan, idx) in plans"
           :key="plan.name"
-          class="relative flex flex-col rounded-2xl border bg-white p-6 sm:p-8 shadow-soft transition-all duration-300 dark:bg-slate-900"
+          v-reveal="{ delay: idx * 120 }"
+          class="relative flex flex-col rounded-2xl border bg-white/90 backdrop-blur-sm p-6 sm:p-8 shadow-soft transition-all duration-300 dark:bg-slate-900/90"
           :class="
             plan.popular
-              ? 'border-indigo-500 ring-2 ring-indigo-500 lg:scale-105 shadow-xl z-10'
-              : 'border-slate-200 dark:border-slate-800 hover:-translate-y-1'
+              ? 'border-indigo-500 ring-2 ring-indigo-500 lg:scale-105 shadow-glow z-10 hover:shadow-indigo-500/30'
+              : 'border-slate-200 dark:border-slate-800 hover:-translate-y-1.5 hover:shadow-lg'
           "
         >
           <!-- Popular Badge -->

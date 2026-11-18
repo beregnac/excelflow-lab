@@ -1,20 +1,24 @@
 <template>
   <!-- Task 1.1: Profile Card — full width on mobile, fixed 320px (md:w-80) on desktop -->
   <article
-    class="w-full md:w-80 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
+    class="group w-full md:w-80 rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-sm p-6 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900/90"
     aria-label="Карточка профиля пользователя"
   >
     <div class="flex flex-col items-center text-center space-y-4">
-      <!-- Avatar 80x80px (w-20 h-20) rounded-full -->
-      <div class="relative">
+      <!-- Avatar 80x80px (w-20 h-20) rounded-full with rotating glow halo -->
+      <div class="relative p-1">
         <div
-          class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-brand-500 via-purple-500 to-pink-500 text-2xl font-bold text-white shadow-md ring-4 ring-brand-50 dark:ring-slate-800"
+          class="pointer-events-none absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,#6366f1,#a855f7,#ec4899,#6366f1)] opacity-75 blur-[2px] animate-spin-slow"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-brand-500 via-purple-500 to-pink-500 text-2xl font-bold text-white shadow-md ring-2 ring-white transition-transform duration-300 group-hover:scale-105 dark:ring-slate-900"
           aria-hidden="true"
         >
           {{ initials }}
         </div>
         <span
-          class="absolute bottom-0.5 right-0.5 h-4 w-4 rounded-full border-2 border-white bg-emerald-500 dark:border-slate-900"
+          class="absolute bottom-1 right-1 z-10 h-4 w-4 rounded-full border-2 border-white bg-emerald-500 dark:border-slate-900"
           title="В сети"
         ></span>
       </div>

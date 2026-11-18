@@ -67,11 +67,15 @@
           {{ resolvedWidth }} × {{ resolvedHeight }}
         </span>
         <span
-          class="inline-flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-slate-950 shadow-md transition-transform duration-200 group-hover:scale-105"
+          class="relative overflow-hidden inline-flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-slate-950 shadow-md transition-transform duration-200 group-hover:scale-105"
           :class="isVertical ? 'w-full' : ''"
         >
-          Начать игру
-          <span aria-hidden="true">→</span>
+          <span
+            class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/55 to-transparent animate-shine-sweep"
+            aria-hidden="true"
+          ></span>
+          <span class="relative">Начать игру</span>
+          <span class="relative transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
         </span>
       </div>
     </a>

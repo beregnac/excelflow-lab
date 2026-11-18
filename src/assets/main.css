@@ -19,6 +19,51 @@
     @apply bg-brand-500/20 text-brand-900 dark:text-brand-100;
   }
 
+  /* Scroll-reveal transitions (v-reveal directive) */
+  .reveal-init {
+    opacity: 0;
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-up {
+    transform: translate3d(0, 28px, 0);
+  }
+
+  .reveal-left {
+    transform: translate3d(-28px, 0, 0);
+  }
+
+  .reveal-right {
+    transform: translate3d(28px, 0, 0);
+  }
+
+  .reveal-zoom {
+    transform: scale(0.94);
+  }
+
+  .reveal-visible {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) scale(1) !important;
+  }
+
+  /* Smooth route page transitions */
+  .route-fade-enter-active,
+  .route-fade-leave-active {
+    transition: opacity 0.24s ease, transform 0.24s ease;
+  }
+
+  .route-fade-enter-from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .route-fade-leave-to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-aurora-1,
     .animate-aurora-2,
@@ -26,8 +71,17 @@
     .animate-grid-pan,
     .animate-meteor,
     .animate-beam-slide,
-    .animate-spin-slow {
+    .animate-spin-slow,
+    .animate-gradient-x,
+    .animate-shine-sweep,
+    .animate-float-slow {
       animation: none !important;
+    }
+
+    .reveal-init {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
     }
   }
 }

@@ -97,6 +97,14 @@ export default {
         spinSlow: {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' }
+        },
+        gradientX: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' }
+        },
+        shineSweep: {
+          '0%': { transform: 'translateX(-120%) skewX(-20deg)' },
+          '100%': { transform: 'translateX(260%) skewX(-20deg)' }
         }
       },
       animation: {
@@ -108,7 +116,9 @@ export default {
         'grid-pan': 'gridPan 14s linear infinite',
         meteor: 'meteor 5s linear infinite',
         'beam-slide': 'beamSlide 9s ease-in-out infinite',
-        'spin-slow': 'spinSlow 28s linear infinite'
+        'spin-slow': 'spinSlow 28s linear infinite',
+        'gradient-x': 'gradientX 5s ease infinite',
+        'shine-sweep': 'shineSweep 2.6s ease-in-out infinite'
       },
       boxShadow: {
         soft: '0 4px 24px -4px rgba(15, 23, 42, 0.08)',

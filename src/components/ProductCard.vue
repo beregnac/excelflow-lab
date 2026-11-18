@@ -1,15 +1,19 @@
 <template>
   <!-- Tasks 1.3 & 4.3: Product Card using @container queries, aspect-square, hover:scale-105 transition -->
   <article
-    class="@container group rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
+    class="@container group rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-sm p-4 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900/85 dark:hover:border-brand-700"
   >
     <div class="flex flex-col @sm:flex-row gap-4 h-full">
-      <!-- Square Image Container (aspect-square) -->
+      <!-- Square Image Container (aspect-square) with Glossy Hover Sheen -->
       <div
         class="relative aspect-square w-full @sm:w-36 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br p-5 flex flex-col justify-between text-white"
         :class="product.gradient"
       >
-        <div class="flex items-start justify-between gap-2">
+        <div
+          class="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-20deg] transition-transform duration-700 ease-out group-hover:translate-x-[200%]"
+          aria-hidden="true"
+        ></div>
+        <div class="relative z-10 flex items-start justify-between gap-2">
           <span class="rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold backdrop-blur-sm">
             {{ product.category }}
           </span>
@@ -18,7 +22,7 @@
           </span>
         </div>
 
-        <div class="my-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+        <div class="relative z-10 my-auto flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
           <svg v-if="product.icon === 'table'" class="h-14 w-14 opacity-95" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="2" />
             <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
