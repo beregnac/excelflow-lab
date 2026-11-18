@@ -1,6 +1,6 @@
 <template>
   <!-- Task 2.3: Fixed Sidebar (w-64 = 256px, fixed inset-y-0 left-0, translate-x-*, h-screen, overflow-y-auto) + Topbar + Content -->
-  <div class="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+  <div class="min-h-screen bg-transparent text-slate-900 transition-colors duration-300 dark:text-slate-100">
     <!-- Mobile Backdrop -->
     <div
       v-if="sidebarOpen"

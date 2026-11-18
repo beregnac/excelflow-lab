@@ -1,6 +1,6 @@
 <template>
   <!-- Task 3.3 & 3.4: Comprehensive Landing Page with Dark Mode & @apply classes -->
-  <div class="min-h-screen flex flex-col bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+  <div class="min-h-screen flex flex-col bg-transparent text-slate-900 transition-colors duration-300 dark:text-slate-100">
     <!-- Task 1.2: Sticky Backdrop-blur Navbar -->
     <AppNavbar />
 
@@ -9,7 +9,7 @@
       <HeroSection />
 
       <!-- #about: Original Excel Uploader Lab Integration -->
-      <section id="about" class="ds-section bg-white dark:bg-slate-900" aria-labelledby="upload-heading">
+      <section id="about" class="ds-section bg-white/70 backdrop-blur-[2px] dark:bg-slate-900/65" aria-labelledby="upload-heading">
         <div class="ds-container">
           <div id="excel-upload" class="mx-auto max-w-3xl text-center space-y-3 mb-10">
             <h2 id="upload-heading" class="ds-h2">Загрузка и обработка Excel-файлов</h2>
@@ -47,7 +47,7 @@
       </section>
 
       <!-- #services: Task 3.3 Features (3 Columns with Icons) -->
-      <section id="services" class="ds-section bg-slate-50 dark:bg-slate-950" aria-labelledby="features-heading">
+      <section id="services" class="ds-section bg-slate-50/45 dark:bg-slate-950/50" aria-labelledby="features-heading">
         <div class="ds-container">
           <div class="mx-auto max-w-2xl text-center space-y-3 mb-12">
             <span class="ds-badge ds-badge-brand">Возможности платформы</span>
@@ -92,7 +92,7 @@
       </section>
 
       <!-- Task 1.3: 6 Product Cards Grid (1 -> 2 -> 3 -> 4 columns) -->
-      <section id="products-grid" class="ds-section bg-white dark:bg-slate-900" aria-labelledby="products-heading">
+      <section id="products-grid" class="ds-section bg-white/70 backdrop-blur-[2px] dark:bg-slate-900/65" aria-labelledby="products-heading">
         <div class="ds-container">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div class="space-y-2">
@@ -122,7 +122,7 @@
       </section>
 
       <!-- Task 3.3: Testimonials Carousel (Pure CSS scroll-snap without JS) -->
-      <section class="ds-section bg-slate-50 dark:bg-slate-950" aria-labelledby="testimonials-heading">
+      <section class="ds-section bg-slate-50/45 dark:bg-slate-950/50" aria-labelledby="testimonials-heading">
         <div class="ds-container">
           <div class="mx-auto max-w-2xl text-center space-y-2 mb-10">
             <span class="ds-badge ds-badge-brand">Отзывы · CSS Snap-карусель</span>
@@ -160,7 +160,7 @@
       <PricingSection />
 
       <!-- Task 3.3: FAQ Accordion via <details> + group-open:* -->
-      <section class="ds-section bg-white dark:bg-slate-900" aria-labelledby="faq-heading">
+      <section class="ds-section bg-white/70 backdrop-blur-[2px] dark:bg-slate-900/65" aria-labelledby="faq-heading">
         <div class="ds-container max-w-3xl">
           <div class="text-center space-y-2 mb-10">
             <span class="ds-badge ds-badge-brand">FAQ · HTML &lt;details&gt;</span>
@@ -190,7 +190,7 @@
       </section>
 
       <!-- #contact: Task 1.1 Profile Card + Quick Contact CTA -->
-      <section id="contact" class="ds-section bg-slate-50 dark:bg-slate-950" aria-labelledby="contact-heading">
+      <section id="contact" class="ds-section bg-slate-50/45 dark:bg-slate-950/50" aria-labelledby="contact-heading">
         <div class="ds-container">
           <div class="flex flex-col lg:flex-row items-center justify-between gap-10 rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-soft dark:border-slate-800 dark:bg-slate-900">
             <div class="max-w-xl space-y-4">
@@ -217,7 +217,7 @@
     </main>
 
     <!-- Task 3.3: 4-Column Footer -->
-    <footer class="border-t border-slate-200 bg-white py-12 dark:border-slate-800 dark:bg-slate-900">
+    <footer class="border-t border-slate-200/80 bg-white/80 backdrop-blur-md py-12 dark:border-slate-800 dark:bg-slate-900/80">
       <div class="ds-container">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="space-y-3">

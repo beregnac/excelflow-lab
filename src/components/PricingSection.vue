@@ -1,6 +1,6 @@
 <template>
   <!-- Task 2.2: Pricing Table (Basic / Pro Popular / Enterprise) with ring-2 ring-indigo-500, lg:scale-105, divide-y, space-y-* -->
-  <section id="pricing" class="ds-section bg-slate-50 dark:bg-slate-950" aria-labelledby="pricing-heading">
+  <section id="pricing" class="ds-section bg-slate-50/45 dark:bg-slate-950/50" aria-labelledby="pricing-heading">
     <div class="ds-container">
       <div class="mx-auto max-w-2xl text-center space-y-3 mb-12">
         <span class="ds-badge ds-badge-brand">Тарифные планы</span>

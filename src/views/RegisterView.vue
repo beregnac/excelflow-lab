@@ -1,6 +1,6 @@
 <template>
   <!-- Task 2.4: Registration form with peer-invalid, peer-focus, password strength bars, group loading state -->
-  <div class="min-h-screen flex flex-col bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+  <div class="min-h-screen flex flex-col bg-transparent text-slate-900 transition-colors duration-300 dark:text-slate-100">
     <AppNavbar />
 
     <main class="flex-1 flex items-center justify-center px-4 py-12">

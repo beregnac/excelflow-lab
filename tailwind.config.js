@@ -63,11 +63,52 @@ export default {
         floatSlow: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' }
+        },
+        auroraDrift1: {
+          '0%, 100%': { transform: 'translate3d(0, 0, 0) scale(1)' },
+          '33%': { transform: 'translate3d(8%, 10%, 0) scale(1.12)' },
+          '66%': { transform: 'translate3d(-6%, 4%, 0) scale(0.94)' }
+        },
+        auroraDrift2: {
+          '0%, 100%': { transform: 'translate3d(0, 0, 0) scale(1)' },
+          '33%': { transform: 'translate3d(-10%, -8%, 0) scale(1.15)' },
+          '66%': { transform: 'translate3d(6%, -12%, 0) scale(0.92)' }
+        },
+        auroraDrift3: {
+          '0%, 100%': { transform: 'translate3d(0, 0, 0) scale(1) rotate(0deg)' },
+          '50%': { transform: 'translate3d(7%, -7%, 0) scale(1.1) rotate(12deg)' }
+        },
+        gridPan: {
+          '0%': { backgroundPosition: '0px 0px' },
+          '100%': { backgroundPosition: '56px 56px' }
+        },
+        meteor: {
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '0' },
+          '10%': { opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': { transform: 'rotate(215deg) translateX(-650px)', opacity: '0' }
+        },
+        beamSlide: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '20%': { opacity: '0.7' },
+          '80%': { opacity: '0.7' },
+          '100%': { transform: 'translateX(200%)', opacity: '0' }
+        },
+        spinSlow: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' }
         }
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out both',
-        'float-slow': 'floatSlow 6s ease-in-out infinite'
+        'float-slow': 'floatSlow 6s ease-in-out infinite',
+        'aurora-1': 'auroraDrift1 16s ease-in-out infinite',
+        'aurora-2': 'auroraDrift2 22s ease-in-out infinite',
+        'aurora-3': 'auroraDrift3 26s ease-in-out infinite',
+        'grid-pan': 'gridPan 14s linear infinite',
+        meteor: 'meteor 5s linear infinite',
+        'beam-slide': 'beamSlide 9s ease-in-out infinite',
+        'spin-slow': 'spinSlow 28s linear infinite'
       },
       boxShadow: {
         soft: '0 4px 24px -4px rgba(15, 23, 42, 0.08)',
