@@ -37,8 +37,9 @@
                 <p class="truncate text-xs font-semibold uppercase tracking-wider text-slate-400">
                   {{ stat.label }}
                 </p>
-                <p class="mt-2 truncate text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-                  {{ stat.value }}
+                <p class="mt-2 flex items-baseline gap-1.5 truncate text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                  <span>{{ stat.value }}</span>
+                  <BynSymbol v-if="stat.currency" />
                 </p>
               </div>
               <span
@@ -212,7 +213,7 @@
                     </td>
                     <td class="py-3.5 pr-4 text-slate-500 dark:text-slate-400 whitespace-nowrap">{{ tx.source }}</td>
                     <td class="py-3.5 pr-4 font-bold text-slate-900 dark:text-white whitespace-nowrap">
-                      {{ tx.amount }}
+                      <span class="inline-flex items-baseline gap-1">{{ tx.amount }} <BynSymbol /></span>
                     </td>
                     <td class="py-3.5 pr-4 whitespace-nowrap">
                       <span
@@ -249,6 +250,7 @@
 import { ref, computed } from 'vue'
 import { useDataStore } from '@/stores/data'
 import DashboardLayout from '@/components/DashboardLayout.vue'
+import BynSymbol from '@/components/BynSymbol.vue'
 
 const dataStore = useDataStore()
 const statusFilter = ref('Все')
@@ -257,7 +259,8 @@ const localSearch = ref('')
 const stats = computed(() => [
   {
     label: 'Выручка за месяц',
-    value: '1 248 500 ₽',
+    value: '1 248 500',
+    currency: true,
     trend: '+12%',
     up: true,
     note: 'По сравнению с прошлым месяцем'
@@ -319,11 +322,11 @@ const monthlyBars = [
 ]
 
 const transactions = [
-  { id: '#TX-9481', client: 'ООО «ТехноЛогистик» — Табель.xlsx', source: 'Excel Импорт', amount: '49 900 ₽', status: 'Завершено', date: '11.11.2026' },
-  { id: '#TX-9480', client: 'Аналитика продаж Q4 (RetailGrid)', source: 'Тариф Pro', amount: '14 900 ₽', status: 'Завершено', date: '11.11.2026' },
-  { id: '#TX-9479', client: 'Прайс-лист поставщиков.xls', source: 'API Конвертер', amount: '19 900 ₽', status: 'В обработке', date: '10.11.2026' },
-  { id: '#TX-9478', client: 'Выгрузка остатков (битый формат)', source: 'Валидатор', amount: '0 ₽', status: 'Ошибка', date: '10.11.2026' },
-  { id: '#TX-9477', client: 'Студия «Вектор» — Подписка Enterprise', source: 'Тариф Enterprise', amount: '49 900 ₽', status: 'Завершено', date: '09.11.2026' }
+  { id: '#TX-9481', client: 'ООО «ТехноЛогистик» — Табель.xlsx', source: 'Excel Импорт', amount: '49 900', status: 'Завершено', date: '11.11.2026' },
+  { id: '#TX-9480', client: 'Аналитика продаж Q4 (RetailGrid)', source: 'Тариф Pro', amount: '14 900', status: 'Завершено', date: '11.11.2026' },
+  { id: '#TX-9479', client: 'Прайс-лист поставщиков.xls', source: 'API Конвертер', amount: '19 900', status: 'В обработке', date: '10.11.2026' },
+  { id: '#TX-9478', client: 'Выгрузка остатков (битый формат)', source: 'Валидатор', amount: '0', status: 'Ошибка', date: '10.11.2026' },
+  { id: '#TX-9477', client: 'Студия «Вектор» — Подписка Enterprise', source: 'Тариф Enterprise', amount: '49 900', status: 'Завершено', date: '09.11.2026' }
 ]
 
 function filteredTransactions(globalSearch) {

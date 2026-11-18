@@ -30,8 +30,10 @@
           <div class="space-y-2 pb-6">
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ plan.name }}</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400">{{ plan.description }}</p>
-            <div class="pt-3 flex items-baseline gap-1">
-              <span class="text-4xl font-extrabold text-slate-900 dark:text-white">{{ plan.price }}</span>
+            <div class="pt-3 flex items-baseline gap-1.5">
+              <span class="inline-flex items-baseline gap-1.5 text-4xl font-extrabold text-slate-900 dark:text-white">
+                {{ plan.price }} <BynSymbol />
+              </span>
               <span class="text-sm text-slate-500 dark:text-slate-400">{{ plan.period }}</span>
             </div>
           </div>
@@ -65,10 +67,12 @@
 </template>
 
 <script setup>
+import BynSymbol from './BynSymbol.vue'
+
 const plans = [
   {
     name: 'Basic',
-    price: '0 ₽',
+    price: '0',
     period: '/ месяц',
     description: 'Для личного использования и быстрого парсинга таблиц.',
     popular: false,
@@ -82,7 +86,7 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: '1 490 ₽',
+    price: '1 490',
     period: '/ месяц',
     description: 'Оптимально для аналитиков и растущих продуктовых команд.',
     popular: true,
@@ -96,7 +100,7 @@ const plans = [
   },
   {
     name: 'Enterprise',
-    price: '4 990 ₽',
+    price: '4 990',
     period: '/ месяц',
     description: 'Полный контроль данных, кастомная дизайн-система и API.',
     popular: false,

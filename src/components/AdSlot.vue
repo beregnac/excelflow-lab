@@ -1,53 +1,80 @@
 <template>
-  <!-- Belbet Stylized Promo AdSlot (keeps dashed AdSlot wrapper + "Рекламное место" label) -->
+  <!-- Real WoW Sirus (sirus.su) Ad Banner inside dashed AdSlot wrapper -->
   <aside
-    v-if="variant === 'belbet'"
+    v-if="variant === 'sirus'"
     role="complementary"
     :aria-label="label"
-    class="relative mx-auto flex max-w-full overflow-hidden rounded-xl border-2 border-dashed border-amber-400/60 bg-gradient-to-r from-[#140b2e] via-[#261152] to-[#110824] text-white shadow-lg transition-all duration-300 hover:border-amber-300 hover:shadow-amber-500/15"
-    :class="isVertical ? 'flex-col justify-between p-5 text-center gap-3' : 'flex-col sm:flex-row items-center justify-between px-5 py-3.5 gap-4'"
-    :style="{ width: resolvedWidth, minHeight: resolvedHeight }"
+    class="mx-auto max-w-full"
+    :style="{ width: resolvedWidth }"
   >
-    <!-- Decorative glow -->
-    <div
-      class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-amber-400/20 blur-2xl"
-      aria-hidden="true"
-    ></div>
+    <a
+      href="https://sirus.su/"
+      target="_blank"
+      rel="noopener noreferrer sponsored"
+      class="group relative flex w-full overflow-hidden rounded-xl border-2 border-dashed border-sky-400/60 bg-gradient-to-r from-[#061124] via-[#0e274d] to-[#07152b] text-white shadow-lg transition-all duration-300 hover:border-amber-300/90 hover:shadow-sky-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+      :class="isVertical ? 'flex-col justify-between p-5 text-center gap-3.5' : 'flex-col sm:flex-row items-center justify-between px-5 py-3.5 gap-4'"
+      :style="{ minHeight: resolvedHeight }"
+    >
+      <!-- Frost & Gold Decorative Glows -->
+      <div
+        class="pointer-events-none absolute -left-8 -top-8 h-32 w-32 rounded-full bg-sky-400/20 blur-2xl"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="pointer-events-none absolute -right-8 -bottom-8 h-32 w-32 rounded-full bg-amber-400/15 blur-2xl"
+        aria-hidden="true"
+      ></div>
 
-    <!-- Brand + Ad Badge -->
-    <div class="relative z-10 flex items-center gap-3" :class="isVertical ? 'flex-col' : ''">
-      <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-300 via-amber-400 to-orange-500 font-black text-slate-950 shadow-md ring-2 ring-amber-200/40">
-        B7
-      </div>
-      <div :class="isVertical ? 'text-center' : 'text-center sm:text-left'">
-        <div class="flex flex-wrap items-center gap-2" :class="isVertical ? 'justify-center' : 'justify-center sm:justify-start'">
-          <span class="text-base font-black tracking-wide text-amber-300 uppercase">
-            belbet
-          </span>
-          <span class="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-200 backdrop-blur-sm">
-            {{ label }} · 18+
-          </span>
+      <!-- Brand Crest + Copy -->
+      <div class="relative z-10 flex items-center gap-3.5" :class="isVertical ? 'flex-col' : ''">
+        <div
+          class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-amber-300/60 bg-gradient-to-br from-sky-500/30 via-blue-900 to-slate-950 shadow-md ring-2 ring-sky-400/30 transition-transform duration-300 group-hover:scale-105"
+          aria-hidden="true"
+        >
+          <svg class="h-7 w-7 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L4 5v6c0 5.25 3.4 10.1 8 11 4.6-.9 8-5.75 8-11V5l-8-3z" />
+            <path d="M12 7v10M9 10l3-3 3 3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
         </div>
-        <p class="mt-0.5 text-xs sm:text-sm font-medium text-purple-100">
-          Колесо удачи и бонус к первому депозиту · Демо-баннер
-        </p>
-      </div>
-    </div>
 
-    <!-- CTA -->
-    <div class="relative z-10 flex items-center gap-2.5 shrink-0" :class="isVertical ? 'w-full justify-center' : ''">
-      <span v-if="showDimensions && !isVertical" class="hidden md:inline text-[11px] font-mono text-purple-300/70">
-        {{ resolvedWidth }} × {{ resolvedHeight }}
-      </span>
-      <button
-        type="button"
-        @click="handleDemoClick"
-        class="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-yellow-300 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-slate-950 shadow transition-transform duration-200 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
-        :class="isVertical ? 'w-full' : ''"
+        <div :class="isVertical ? 'text-center' : 'text-center sm:text-left'">
+          <div
+            class="flex flex-wrap items-center gap-2"
+            :class="isVertical ? 'justify-center' : 'justify-center sm:justify-start'"
+          >
+            <span class="bg-gradient-to-r from-amber-200 via-yellow-300 to-sky-300 bg-clip-text text-base font-black tracking-wide text-transparent uppercase">
+              WoW Sirus
+            </span>
+            <span class="rounded bg-sky-400/20 border border-sky-300/30 px-1.5 py-0.5 text-[10px] font-bold text-sky-200">
+              3.3.5a+
+            </span>
+            <span class="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-200">
+              {{ label }} · sirus.su
+            </span>
+          </div>
+          <p class="mt-1 text-xs sm:text-sm font-medium text-sky-100/90 leading-snug">
+            Бесплатный WotLK с кастомными расами, рейдами, HD-графикой и режимом «Один шанс»
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div
+        class="relative z-10 flex items-center gap-3 shrink-0"
+        :class="isVertical ? 'w-full justify-center' : ''"
       >
-        {{ clicked ? 'Демо-переход ✓' : 'Играть сейчас' }}
-      </button>
-    </div>
+        <span v-if="showDimensions && !isVertical" class="hidden lg:inline text-[11px] font-mono text-sky-300/60">
+          {{ resolvedWidth }} × {{ resolvedHeight }}
+        </span>
+        <span
+          class="inline-flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-slate-950 shadow-md transition-transform duration-200 group-hover:scale-105"
+          :class="isVertical ? 'w-full' : ''"
+        >
+          Начать игру
+          <span aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
   </aside>
 
   <!-- Default Dashed Placeholder AdSlot -->
@@ -68,7 +95,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 
 const SIZE_PRESETS = {
   banner: { width: '728px', height: '90px' },
@@ -81,12 +108,12 @@ const SIZE_PRESETS = {
 const props = defineProps({
   label: {
     type: String,
-    default: 'Рекламное место'
+    default: 'Реклама'
   },
   variant: {
     type: String,
-    default: 'belbet',
-    validator: (v) => ['placeholder', 'belbet'].includes(v)
+    default: 'sirus',
+    validator: (v) => ['placeholder', 'sirus'].includes(v)
   },
   size: {
     type: String,
@@ -107,16 +134,8 @@ const props = defineProps({
   }
 })
 
-const clicked = ref(false)
 const preset = computed(() => SIZE_PRESETS[props.size] || SIZE_PRESETS.banner)
 const resolvedWidth = computed(() => props.width || preset.value.width)
 const resolvedHeight = computed(() => props.height || preset.value.height)
 const isVertical = computed(() => props.size === 'sidebar' || props.size === 'square')
-
-function handleDemoClick() {
-  clicked.value = true
-  setTimeout(() => {
-    clicked.value = false
-  }, 1500)
-}
 </script>

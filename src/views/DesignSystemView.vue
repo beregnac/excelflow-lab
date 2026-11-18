@@ -193,9 +193,9 @@
         </div>
         <div class="space-y-6">
           <AdSlot size="banner" variant="placeholder" label="Рекламное место · Placeholder" />
-          <AdSlot size="banner" variant="belbet" label="Реклама · Belbet Banner" />
+          <AdSlot size="banner" variant="sirus" label="Реклама" />
           <div class="flex flex-wrap items-start justify-center gap-6">
-            <AdSlot size="sidebar" variant="belbet" label="Реклама · Sidebar" />
+            <AdSlot size="sidebar" variant="sirus" label="Реклама" />
             <AdSlot size="square" variant="placeholder" label="Рекламное место · Square" />
           </div>
         </div>

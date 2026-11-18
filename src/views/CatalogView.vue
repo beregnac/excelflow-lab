@@ -36,7 +36,7 @@
       >
         <div class="text-sm text-brand-900 dark:text-brand-100">
           🛒 В корзине <strong>{{ cart.totalCount }}</strong> шт. на сумму
-          <strong>{{ cart.totalPrice.toLocaleString('ru-RU') }} ₽</strong>
+          <strong class="inline-flex items-baseline gap-1">{{ cart.totalPrice.toLocaleString('ru-RU') }} <BynSymbol /></strong>
         </div>
         <button type="button" @click="cart.clearCart()" class="ds-btn ds-btn-outline ds-btn-sm">
           Очистить корзину
@@ -76,7 +76,7 @@
           <div class="space-y-2.5">
             <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-400">
               <span>Макс. цена</span>
-              <span class="text-slate-800 dark:text-slate-200">{{ maxPrice.toLocaleString('ru-RU') }} ₽</span>
+              <span class="inline-flex items-baseline gap-1 text-slate-800 dark:text-slate-200">{{ maxPrice.toLocaleString('ru-RU') }} <BynSymbol /></span>
             </div>
             <input
               v-model.number="maxPrice"
@@ -107,7 +107,7 @@
           </div>
 
           <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
-            <AdSlot size="sidebar" variant="belbet" width="100%" height="220px" label="Реклама" />
+            <AdSlot size="sidebar" variant="sirus" width="100%" height="220px" label="Реклама" />
           </div>
         </aside>
 
@@ -173,7 +173,7 @@
           </div>
 
           <!-- AdSlot between catalog grid and pagination -->
-          <AdSlot size="banner" variant="belbet" label="Рекламное место" />
+          <AdSlot size="banner" variant="sirus" label="Реклама" />
 
           <!-- Pagination -->
           <nav
@@ -252,7 +252,7 @@
           <div>
             <div class="flex justify-between text-xs font-semibold mb-1.5">
               <span>Цена до:</span>
-              <span>{{ maxPrice.toLocaleString('ru-RU') }} ₽</span>
+              <span class="inline-flex items-baseline gap-1">{{ maxPrice.toLocaleString('ru-RU') }} <BynSymbol /></span>
             </div>
             <input v-model.number="maxPrice" type="range" min="1000" max="4000" step="100" class="w-full accent-brand-600" />
           </div>
@@ -292,6 +292,7 @@ import { CATALOG_PRODUCTS } from '@/data/mockContent'
 import DashboardLayout from '@/components/DashboardLayout.vue'
 import ProductCard from '@/components/ProductCard.vue'
 import AdSlot from '@/components/AdSlot.vue'
+import BynSymbol from '@/components/BynSymbol.vue'
 
 const cart = useCartStore()
 

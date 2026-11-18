@@ -64,8 +64,8 @@
         <div class="flex items-center justify-between gap-3 pt-2 border-t border-slate-100 dark:border-slate-800">
           <div>
             <span class="text-xs text-slate-400 block">Стоимость</span>
-            <span class="text-lg font-extrabold text-slate-900 dark:text-white">
-              {{ product.price.toLocaleString('ru-RU') }} ₽
+            <span class="inline-flex items-baseline gap-1 text-lg font-extrabold text-slate-900 dark:text-white">
+              {{ product.price.toLocaleString('ru-RU') }} <BynSymbol />
             </span>
           </div>
           <button
@@ -84,6 +84,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import BynSymbol from './BynSymbol.vue'
 
 const props = defineProps({
   product: { type: Object, required: true }
