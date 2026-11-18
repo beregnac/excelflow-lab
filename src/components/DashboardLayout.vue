@@ -165,6 +165,21 @@
       <main class="flex-1 p-4 sm:p-6 lg:p-8">
         <slot :search-query="searchQuery" />
       </main>
+
+      <!-- Footer with 4 Ad Slots -->
+      <footer class="border-t border-slate-200/80 bg-white/75 backdrop-blur-md px-4 py-6 sm:px-6 lg:px-8 dark:border-slate-800 dark:bg-slate-900/75">
+        <div class="mb-3 flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            Партнёры и реклама · 4 слота
+          </span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 items-stretch">
+          <AdSlot size="footer" variant="sirus" label="Реклама" :show-dimensions="false" />
+          <AdSlot size="footer" variant="jetbrains" label="Реклама" :show-dimensions="false" />
+          <AdSlot size="footer" variant="cloudflare" label="Реклама" :show-dimensions="false" />
+          <AdSlot size="footer" variant="steam" label="Реклама" :show-dimensions="false" />
+        </div>
+      </footer>
     </div>
   </div>
 </template>
@@ -174,6 +189,7 @@ import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import ThemeToggle from './ThemeToggle.vue'
+import AdSlot from './AdSlot.vue'
 
 const route = useRoute()
 const auth = useAuthStore()

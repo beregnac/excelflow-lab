@@ -274,7 +274,30 @@
           </div>
         </div>
 
-        <div class="mt-10 border-t border-slate-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 dark:border-slate-800">
+        <!-- 4 Footer Ad Slots (WoW Sirus + 3 partner ads) -->
+        <div class="mt-10 border-t border-slate-200/80 pt-8 dark:border-slate-800">
+          <div class="mb-4 flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+              Партнёры и реклама · 4 слота
+            </span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+            <div v-reveal="{ delay: 0 }" class="h-full">
+              <AdSlot size="footer" variant="sirus" label="Реклама" :show-dimensions="false" />
+            </div>
+            <div v-reveal="{ delay: 90 }" class="h-full">
+              <AdSlot size="footer" variant="jetbrains" label="Реклама" :show-dimensions="false" />
+            </div>
+            <div v-reveal="{ delay: 180 }" class="h-full">
+              <AdSlot size="footer" variant="cloudflare" label="Реклама" :show-dimensions="false" />
+            </div>
+            <div v-reveal="{ delay: 270 }" class="h-full">
+              <AdSlot size="footer" variant="steam" label="Реклама" :show-dimensions="false" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-slate-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 dark:border-slate-800">
           <p>© 2026 ExcelFlow Lab. Все компоненты адаптированы от 320px до 4K.</p>
           <p>Vue 3 + Tailwind CSS v3.4 + @tailwindcss/container-queries</p>
         </div>
